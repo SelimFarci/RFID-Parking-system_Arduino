@@ -1,9 +1,36 @@
-# RFID-Parking-System-Arduino-Code
+RFID-Based Parking System  
+=========================  
 
-Arduino code for RFID based parking system using two LCD's and a Keypad 
+Description :  
+--------------  
+Ce projet implémente un système de gestion de parking basé sur un Arduino, un lecteur RFID, des cartes/tags RFID, deux écrans LCD et un clavier. Le système permet d'identifier les utilisateurs et  de suivre leurs temps de stationnement et de gérer les paiements automatiquement ou manuellement.  
 
-This Project is about using RFID Reader , RFID card/tags as an identification to keep a track of users present in the parking area. Each user will have his/her own RFID card/tag which will hold the amount the user recharges after paying to the parking manager .This system is just like metro cards in some of the metropolitan cities.
-When the first user enters the parking area after scanning his card. The arduino program checks in the database wheather the user is present in the database or not .If yes!, card's balance amount is checked or else the new RFID tag need to be registered with the consent of the parking manager.If the card  balance amount is less than 50 Rs then the program asks the user to recharge his card with a minimum amount of 100 Rs. But if the balance amount is greater than 50Rs then he is welcomed in the parking area. After this process is completed the user is allowed to park his car.
-When user wants to leave the parking area, he is required to scan the card again.The program then displays the user , the time for which his car has been charged and also displays the amount which has been deducted from his card.
-For a person who is new to the Parking lot does'nt need to worry because this parking system also accepts the users who does'nt have any RFID card/tag.For them the parking manager gives them the UserID which is then stored in the database.On comming out of the parking lot the user needs to enter the same UserID which was given to him at the time of entry. After the user enters the ID, the total amount charged to him based on the time he stayed in the parking lot is displayed and the user is required to give the amount charged manually to the parking manager.     
-To Track the number of vehicles already present in the parking lot, there is a counter. For our project we used 2 bit counter to display count upto 3.If the area can accommodate more vehicles then the Green LED turns ON. And if the parking area is full then the Red LED turns ON indicating absence of space.
+Fonctionnalités principales :  
+-----------------------------  
+1. **Entrée dans le parking :**  
+   - L'utilisateur scanne sa carte/tag RFID.  
+   - Si la carte est reconnue :  
+     - Le système vérifie le solde de la carte.  
+     - Si le solde est inférieur à 50 Rs, un rechargement de 100 Rs est demandé.  
+     - Sinon, l'entrée est autorisée.  
+   - Si la carte n'est pas enregistrée :  
+     - La carte doit être ajoutée dans la base de données par le gestionnaire du parking.  
+
+2. **Sortie du parking :**  
+   - L'utilisateur scanne sa carte RFID ou entre un identifiant (UserID) donné par le gestionnaire à l'entrée.  
+   - Le système calcule le temps de stationnement et déduit le montant du solde de la carte ou demande un paiement manuel.  
+
+3. **Suivi des places disponibles :**  
+   - Un compteur surveille le nombre de véhicules présents dans le parking.  
+   - Une LED verte s'allume si des places sont disponibles. Si le parking est plein, une LED rouge s'allume.  
+
+Matériel utilisé :  
+------------------  
+- Arduino  
+- Lecteur RFID  
+- Cartes/tags RFID    
+- Deux écrans LCD  
+- LEDs (verte et rouge)  
+- Compteur 2 bits  
+
+Pour plus de détails, consultez le code et les fichiers associés dans ce dépôt.  
